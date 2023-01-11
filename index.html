@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="img/png" href="https://cdn-icons-png.flaticon.com/512/174/174854.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="navbar">
+    <header>Lenguaje HTML</header>
+    <ul>
+        <li><a class="nav-link" href="#Introdución">Introdución</a></li>
+        <li><a class="nav-link" href="#Qué_es_una_etiqueta_HTML">Qué es una etiqueta HTML</a></li>
+        <li><a class="nav-link" href="#Estructura_de_etiqueta_HTML">Estructura de etiqueta HTML</a></li>
+        <li><a class="nav-link" href="#Atributos_comunes_en_HTML">Atributos comunes en HTML</a></li>
+        <li><a class="nav-link" href="#Estructura_del_documento_HTML">Estructura del documento HTML</a></li>
+        <li><a class="nav-link" href="#Validación_de_errores_HTML">Validación de errores HTML</a></li>
+        <li><a class="nav-link" href="#Referencia">Referencia</a></li>
+    </ul>
+    </nav>
+    <main id="main-doc">
+    <section class="main-section" id="Introdución">
+        <header>Introdución</header>
+        <article>
+            <p>
+                Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está
+                ocurriendo es que nuestro navegador web está pidiendo un documento de texto al sistema
+                (<em>máquina</em>) donde está almacenada esa página web.
+            </p>
+            <p>
+                En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la
+                página web, la cuál nos mostrará exactamente el texto de dicho documento. El navegador
+                normalmente no nos muestra esa información literalmente, sino que la interpreta y va
+                dibujando los elementos de una página web.</p>
+            </p>
+            <p>
+                El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong>
+                llamado <strong>HTML</strong>, que son las siglas de <strong>HyperText Markup Language</strong>
+                (<em>Lenguaje de marcas de hipertexto</em>), o lo que es lo mismo, un lenguaje de etiquetas que
+                permite incluir o hacer referencia a todo tipo de información.
+            </p>
+            <p>
+                <img src="https://lenguajehtml.com/html/introduccion/que-es-html/documento-texto-chrome.png"
+                alt="Los navegadores leen documentos de texto en «idioma» HTML" width="500">
+            </p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Qué_es_una_etiqueta_HTML">
+            <header>Qué es una etiqueta HTML</header>
+            <article>
+            <p>
+                En el navegador Chrome, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código fuente de la página en la que te encuentras. Dicho documento esta formado por <strong>etiquetas</strong>, que son la base del <strong>lenguaje HTML</strong>.
+            </p>
+            <p>
+                Existen muchas etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha información, dependiendo de la etiqueta que se trate. Las etiquetas HTML tienen la siguiente estructura:
+            </p>
+            <pre>
+                <code class="html">&lt;etiqueta&gt;contenido&lt;/etiqueta&gt;</code>
+            </pre>
+            <p>
+                En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<em>en el ejemplo anterior, es incorrecto utilizar la etiqueta «etiqueta»</em>). En su lugar, existen una serie de etiquetas concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.
+            </p>
+            <p>
+                A continuación, utilicemos la etiqueta <strong id="fuente_strong">&lt;strong&gt;</strong> (<em>etiqueta utilizada para darle importancia a una palabra sobre el resto</em>) en el siguiente ejemplo:
+            </p>
+            <pre>
+                <code class="html">&lt;p&gt; Dentro de este texto, esta&lt;strong&gt; es más importante que el resto.&lt;/p&gt;</code>
+            </pre>
+            <p>
+                Obsérvese que en el ejemplo estamos utilizando dos etiquetas diferentes. La etiqueta <code>&lt;p&gt;</code>, que contiene toda la frase, y la etiqueta <strong id="fuente_strong">&lt;strong&gt;</strong>, que contiene sólo la palabra <strong>palabra</strong>. La primera etiqueta, <strong id="fuente_strong">&lt;p&gt;</strong>, se utiliza para contener párrafos, mientras que la segunda etiqueta, <strong id="fuente_strong">&lt;strong&gt;</strong>, indica la palabra que tiene mayor importancia del texto.
+            </p>
+            <p>
+              También se habrá observado que se pueden anidar etiquetas, esto es, incluir etiquetas dentro de otras. Es algo que se hace continuamente en HTML y que a medida que avancemos se tornará habitual.
+            </p>
+            <h2>¿Que es semántica?</h2>
+            <p>
+              Uno de los principales objetivos de HTML5 es introducir información en un documento HTML5 de forma que sea semántico y no visual. Con esto queremos decir que todos los aspectos visuales deben dejarse para el apartado de presentación, que se gestiona desde el lenguaje CSS</>. En el documento HTML debe aparecer información correctamente individualizada, de modo que al leer una página HTML comprendamos su significado, y si queremos cambiar la apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como <strong>separación de la presentación del contenido</strong>.
+            </p>
+            <p>
+              Un ejemplo donde se ve claramente esto es con la etiqueta <strong id="fuente_strong">&lt;b&gt;</strong> de HTML4 y anteriores. Dicha etiqueta se utilizaba para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:
+            </p>
+            <pre>
+              <code class="html">Hola, quiero saltar esta &lt;b&gt;palabra&lt;/b&gt;. </code>
+            </pre>
+            <p>
+              En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML, algo que no se debe hacer en HTML5. La misión de HTML5 es mantener sólo contenido e información semántica en HTML5. Por ello, la forma de hacerlo en HTML5 es la siguiente:
+            </p>
+            <pre>
+              <code class="html">Hola, quiero resaltar esta &lt;strong&gt;palabra&lt;/strong&gt;</code>
+            </pre>
+            <p>
+              En este nuevo ejemplo, se reemplaza la etiqueta <strong id="fuente_strong">&lt;b&gt;</strong> (<em>negrita, característica de presentación</em>) por <strong id="fuente_strong">&lt;strong&gt;</strong>, una etiqueta que indica información semántica (<em>importante, característica semántica</em>). De esta forma, en el HTML5 sólo se está añadiendo información particular sobre fragmentos de texto, y si queremos dotar de presentación visual, lo haremos desde CSS:
+            </p>
+            <pre>
+              <code class="css">strong {
+                font-weight: bol;
+                color: black;
+              }</code>
+            </pre>
+            <p>
+              De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente de la información y contenido que existe en el HTML. Incluso podríamos establecer el mismo estilo que en el texto, para que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.
+            </p>
+            <p>
+              El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para usuarios (<em>o más concretamente, para navegadores</em>), cada vez tendemos más a una Internet capaz de procesar información de forma autónoma. Muestra de ello son, por ejemplo, los robots o crawlers de buscadores como <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para analizar la información de la misma, entenderla e indexarla en su buscador.
+            </p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Estructura_de_etiqueta_HTML">
+        <header>Estructura de etiqueta HTML</header>
+        <article>
+          <p>
+            Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y muchas etiquetas HTML que indican que tipo de contenido se va a mostrar en el navegador al cargar la página web.
+          </p>
+          <p>
+            La <strong>estructura de las etiquetas HTML</strong> tiene el siguiente formato:
+          </p>
+          <p>
+            <img src="https://lenguajehtml.com/html/introduccion/estructura-etiqueta-html/estructura-etiqueta-html.png" alt="Estructura de una etiqueta HTML" width="500">
+          </p>
+          <h2>Etiqueta HTML</h2>
+          <p>
+            La parte esencial de una etiqueta HTML es lo que se denomina la <strong>etiqueta de apertura</strong>. Se trata de escribir el nombre de la etiqueta en cuestión, colocándola entre los carácteres <strong id="fuente_strong">&lt;y&gt;</strong>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre escribir las etiquetas siempre en minúsculas.
+          </p>
+          <p>En HTML5 no se puede colocar cualquier palabra como etiqueta, sino que existen una serie específica de etiquetas, cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <strong id="fuente_strong">&lt;strong&gt;</strong>:
+          </p>
+          <pre>
+            <code class="html">&lt;strong&gt;Contenido&lt;/strong&gt;</code>
+          </pre>
+          <p>
+            Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de apertura, pero con la barra <strong id="fuente_strong">/</strong> inmediatamente después del <strong id="fuente_strong">&lt;</strong>.
+          </p>
+          <h2>Atributo</h2>
+          <p>
+            En algunas etiquetas HTML, existen algunos atributos específicos (<em>que pueden ser opcionales u obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta (<em>o su modo de actuar</em>) y generalmente van asociados a un valor determinado. Este par <strong>atributo-valor</strong> se escribe después del nombre de la etiqueta, separándola por espacio y antes del carácter <strong id="fuente_strong">&gt;</strong> de la etiqueta de apertura:
+          </p>
+          <pre>
+            <code class="html">&lt;strong id="dato"&gt;Contenido&lt;/strong&gt;</code>
+          </pre>
+          <p>
+            En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es <strong>Contenido</strong>. Por otro lado, y al igual que las etiquetas, cada atributo tiene una misión y comportamiento concreto. Aunque los valores pueden ir rodeados por comillas simples, se recomienda escribir el valor siempre entre <strong>comillas dobles</strong>.
+          </p>
+          <p>
+            Existen 3 tipos de atributos dependiendo de sus valores:
+          </p>
+          <ul>
+            <li>
+              <strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle una serie de valores limitada. Cualquier otro valor que no sea uno de ellos, no será válido.
+            </li>
+            <li>
+              <strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor libremente, como una dirección URL o un texto, y no existe una serie de valores específicos para escribir.
+            </li>
+            <li>
+              <strong>Valores booleanos</strong>: Son los atributos que deben tener un valor verdadero (<em>true</em>) o un valor falso (<em>false</em>). En HTML5 estos atributos se escriben sin valor (<em>solo el atributo</em>) si son verdaderos y se omiten para indicar que son falsos.
+            </li>
+            </ul>
+            <h2>Contenido de la etiqueta</h2>
+            <p>
+              En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>) se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve como contiene un <strong>fragmento de texto</strong>:
+            </p>
+            <pre>
+              <code class="html">&lt;strong id="dato" class="clase1" lang="es"&gt;Contenido de texto&lt;/strong&gt;</code>
+            </pre>
+            <p>
+              Ten en cuenta que una etiqueta puede tener varios pares atributo-valor, como se ve en el ejemplo anterior, pero nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría al anterior. El orden de los atributos no importa. Más adelante explicaremos que tipos de atributos existen y para que sirven.
+            </p>
+            <p>
+              Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más adelante en el apartado de etiquetas. Un posible ejemplo sería el siguiente:
+            </p>
+            <pre>
+              <code class="html">&lt;div id="pagina"&gt;
+                &lt;strong&gt;Contenido importante&lt;/strong&gt;
+                &lt;/div&gt;</code>
+            </pre>
+            <p>
+              Nótese que dentro de la etiqueta <strong id="fuente_strong">&lt;div&gt;</strong> vemos que no sólo hay un fragmento de texto, sino que además incluye otra etiqueta, <strong id="fuente_strong">&lt;strong&gt;</strong> en este caso. Esto ocurre en las etiquetas de agrupación, que veremos más adelante.
+            </p>
+            <h2>Comentario HTML</h2>
+            <p>
+              Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores. Se basa en introducir breves fragmentos de texto que el navegador ignora y no tendrá en cuenta a la hora de crear la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo importante o simplemente introducir algún texto que consideramos relevante:
+            </p>
+            <pre>
+              <code class="html">&#60;&#33;&#45;&#45; Comentario &#45;&#45;&#62;</code>
+            </pre>
+            <p>
+              Como se puede ver, para introducir estos comentarios en el código HTML, basta con escribir los fragmentos de texto <strong id="fuente_strong">&lt;!--</strong> y <strong id="fuente_strong">--&gt;</strong> entre el comentario en cuestión que queramos incluir.
+            </p>
+        </article>
+      </section>
+
+      <section class="main-section" id="Atributos_comunes_en_HTML">
+        <header>Atributos comunes en HTML</header>
+        <article>
+          <p>
+            Como hemos visto, el HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.
+          </p>
+          <p>
+            En este apartado vamos a ver una lista de <strong>atributos comunes</strong> que pueden ser utilizados en <strong>cualquier etiqueta HTML</strong>:
+          </p>
+
+          <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Atributo</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">id</th>
+      <td>nombre</td>
+      <td>Establece un <strong>identificador</strong> a la etiqueta HTML (sólo una por página con ese nombre).</td>
+    </tr>
+    <tr>
+      <th scope="row">class</th>
+      <td>nombre</td>
+      <td>Establece una <strong>clase</strong> (género) a una etiqueta HTML. Puede repetirse por página.</td>
+    </tr>
+    <tr class="table-primary">
+      <th scope="row">lang</th>
+      <td>Idioma</td>
+      <td>Indica el idioma del contenido de la etiqueta HTML.</td>
+    </tr>
+    <tr class="table-secondary">
+      <th scope="row">translate</th>
+      <td><strong>yes</strong> | <strong id="fuente_strong">no</strong></td>
+      <td>Indica si el contenido de la etiqueta es traducible o no.</td>
+    </tr>
+    <tr class="table-success">
+      <th scope="row">Title</th>
+      <td>título</td>
+      <td>Mensaje mostrado en un <strong>tooltip</strong> (aviso amarillo emergente) al mover el ratón encima.</td>
+    </tr>
+    <tr class="table-danger">
+      <th scope="row">Data-*</th>
+      <td><em>nombre</em></td>
+      <td>Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <strong id="fuente_strong">data-</strong>.</td>
+    </tr>
+    <tr class="table-warning">
+      <th scope="row">accesskey</th>
+      <td><em>atajo</em></td>
+      <td>Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
+    </tr>
+    <tr class="table-info">
+      <th scope="row">dir</th>
+      <td><strong>ltr</strong> | <strong id="fuente_strong">rtl</strong></td>
+      <td>Establece la direccionalidad del texto (<em>left to right</em> o <em>right to left</em>).</td>
+    </tr>
+    <tr class="table-light">
+      <th scope="row">style</th>
+      <td><em>estilos</em></td>
+      <td>Aplica propiedades CSS directamente al elemento en cuestión.</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Esta sección no es absolutamente necesaria para usuarios iniciados, y quizás requiera adquirir más práctica con HTML antes de comenzar a leer esta parte.
+</p>
+<h2> identificador de etiqueta (id)</h2>
+<p>
+  En HTML, podemos darle un identificador a una etiqueta HTML y de esta forma darle un nombre. Simplemente, añadimos el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no debe empezar nunca por un número y puede contener letras mayúsculas, minúsculas, signos especiales (<em>guión, guión bajo...</em>) o números:
+</p>
+<pre>
+  <code class="html">&lt;div id="pagina"&gt;
+    &lt;div&gt;Aquí irá un anuncio&lt;/div&gt;
+    &lt;div id="articulo"&gt;Aquí irá el contenido de texto del artículo&lt;/div&gt;
+    &lt;div&gt;Aquí irá un anuncio&lt;/div&gt;
+    &lt;/div&gt;</code>
+</pre>
+<p>
+  Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no se van a repetir en esa misma página</strong>.
+</p>
+<p>
+  Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos correctos de id serían «pagina» (<em>para contener toda la página completa</em>), «comentarios» (<em>para contener toda la zona de comentarios de la página</em>) o «header» (<em>para contener la parte con el logo y la cabecera de la página</em>). Lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong> en varias etiquetas HTML en una misma página.
+</p>
+
+        </article>
+      </section>
+
+      <section class="main-section" id="Estructura_del_documento_HTML">
+        <header>Estructura del documento HTML</header>
+        <article>
+          <p>
+            Un documento HTML debe tener siempre una estructura inicial, con algunas etiquetas y características obligatorias y otras recomendables. Ese esquema es el siguiente, donde se diferencian tres zonas principales:
+          </p>
+          <ul>
+            <li>
+            <p><strong>Tipo de documento</strong>: En la primera línea del documento HTML debe ir especificado siempre de que tipo de documento HTML se trata. No es absolutamente obligatorio indicarlo (<em>de hecho, hay páginas webs que no lo tienen</em>), pero eso trae algunas consecuencias que veremos más adelante.</p>
+            </li>
+            <li>
+            <p><strong>Head</strong>: En el documento HTML hay una primera sección donde se especificarán todos los <strong>metadatos</strong> del documento, es decir, la parte «que no se ve» directamente en el navegador de forma visual.</p>
+            </li>
+            <li>
+            <p><strong>Body</strong>: La segunda sección es el cuerpo de la página, donde si aparecen todos los elementos que aparecerán visualmente en el navegador del usuario.</p>
+            </li>
+            </ul>
+            <p>
+              Las dos últimas secciones deben estar dentro de la etiqueta <strong id="fuente_strong">&lt;html&gt;</strong>, que es la que debe contener cualquier tipo de etiqueta HTML (<em>salvo el tipo de documento, que debe especificarse antes</em>):
+            </p>
+            <p>
+              <img src="https://lenguajehtml.com/html/introduccion/estructura-documento-html/estructura-documento-html.png" alt="Estructura de un documento HTML" width="500">
+            </p>
+            <h2>Tipo de Documento</h2>
+            <p>
+              Antes de comenzar un documento HTML, en su primera línea, es siempre conveniente indicar el tipo de documento a utilizar. Para indicar que se trata de un <strong>documento HTML5</strong> colocaremos la siguiente linea:
+            </p>
+            <pre>
+              <code class="html"> &lt; &#33; DOCTYPE html &gt;</code>
+            </pre>
+            <p>
+              En versiones anteriores, como <strong>HTML4</strong> o <strong>XHTML</strong>, el tipo de documento se especificaba en la primera línea de la siguiente forma (<em>más compleja</em>):
+            </p>
+            <pre>
+              <code class="html"> &lt; &#33; DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+              "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" &gt;</code>
+            </pre>
+            <p>
+              Los navegadores, antes de comenzar a dibujar una página web, lo primero que hacen es leer la línea donde se indica el <strong>tipo de documento</strong> del que se trata. De esta forma, el navegador ya está preparado para actuar adaptándose perfectamente a cada tipo de documento.
+            </p>
+            <p>
+              En el caso de no indicar el tipo de documento en una página HTML, el navegador entra en lo que se llama <strong>Quirk mode</strong> (<em>modo peculiar o modo no estándar</em>), donde se activa un <strong>modo de retrocompatibilidad</strong> con páginas antiguas, que procesará de forma diferente muchas etiquetas HTML o propiedades CSS.
+            </p>
+            <h2>Cabecera HTML</h2>
+            <p>
+              La zona de la cabecera de una página web es la parte que se incluye en el interior de las etiquetas <strong id="fuente_strong">&lt;head&gt;</strong>, que son las primeras etiquetas que se encuentran en el documento y a su vez están dentro de las etiquetas <strong id="fuente_strong">&lt;html&gt;</strong> que engloban todo el documento HTML.
+            </p>
+            <p>
+              En esta zona se indicarán, en su mayoría, <strong>metadatos</strong> como el título y descripción de la página o elementos relacionados que no se representarán visualmente en el navegador del usuario. También es el lugar indicado para incluir etiquetas que relacionen el documento actual con otros documentos externos (<em>por ejemplo, para cargar estilos CSS o scripts</em>).
+            </p>
+            <h2>Cuerpo de página</h2>
+            <p>
+              La zona del cuerpo de página es la parte que se incluye en el interior de las etiquetas <strong id="fuente_strong">&lt;body&gt;</strong>, la segunda parte de un documento HTML, que va inmediatamente después del cierre de la etiqueta <strong id="fuente_strong">&lt;head&gt;</strong>. En esta zona se incluyen todas las etiquetas HTML que si tienen repercusión visual en el navegador del usuario, generalmente utilizadas para dibujar secciones o partes de una página.
+            </p>
+        </article>
+      </section>
+
+      <section class="main-section" id="Validación_de_errores_HTML">
+        <header>Validación de errores HTML</header>
+        <article>
+          <p>
+            Si estamos empezando con nuestro primer documento HTML y queremos comprobar si hay errores o hemos hecho mal, ¿qué podemos hacer? Los programadores suelen estar acostumbrados a los <strong>lenguajes de programación</strong>, donde si tenemos un error en nuestro código, debemos corregirlo para continuar, ya que en caso contrario no podremos utilizar ese programa.
+          </p>
+          <p>
+            En los lenguajes de marcas como HTML, los navegadores son más permisivos, ya que en el caso de encontrar un error, intentan «intuir» lo que se quiso decir y prosiguen con la carga del documento. De esta forma tenemos un método más flexible a errores, pero también es un arma de doble filo donde podemos experimentar problemas derivado de ello.
+          </p>
+          <h2>Validador HTML5 de W3C</h2>
+          <p>
+            Para evitar esto y asegurarnos de que nuestro código está correctamente escrito, podemos utilizar un <strong>Validador HTML</strong>, que no es más que un sistema que analiza nuestro código y nos dice el número de errores que tenemos, junto a una breve descripción del mismo.
+          </p>
+          <p>
+            Para realizar ese proceso de validación podemos utilizar HTML Validator, de W3C, que contiene <strong>Nu HTML Checker</strong>, un validador de HTML5 aún en fase experimental, pero que actualmente puede ser utilizado sin problemas para este proceso de búsqueda de errores:
+          </p>
+          <p>
+            <img src="https://lenguajehtml.com/html/introduccion/validacion-html/validador-html.png" alt="Nu HTML Checker, validador HTML5" width="500">
+          </p>
+          <p>
+            Existen 3 formas de enviar nuestro documento HTML a este validador HTML:
+          </p>
+          <ul>
+            <li>
+            <p><strong>Address</strong>: Indicando la dirección URL de la página que se quiere validar. Obviamente, es necesario que la página esté colgada en Internet.</p>
+            </li>
+            <li>
+            <p><strong>File Upload</strong>: Seleccionando el archivo HTML de nuestro equipo, subirlo al validador y, posterior y finalmente, realizar el proceso de análisis.</p>
+            </li>
+            <li>
+            <p><strong>Text Input</strong>: Escribiendo (<em>o pegando</em>) directamente el código HTML del documento HTML íntegro a analizar.</p>
+            </li>
+            </ul>
+          <p>
+              Además, si nos fijamos en la parte superior de la herramienta de validación, veremos que hay tres casillas disponibles para marcar, con las que podemos agregar nuevas características que se mostrarán tras la validación. Dichas características son las siguientes:
+          </p>
+            <ul>
+              <li>
+              <p><strong>Source</strong>: Nos muestra el código fuente, numerado por líneas. Útil para corregir problemas sobre la marcha o comprobar los errores en las líneas especificadas.</p>
+              </li>
+              <li>
+              <p><strong>Outline</strong>: Nos muestra una especie de árbol o esquema de la página.</p>
+              </li>
+              <li>
+              <p><strong>Image report</strong>: Genera un informe de las imágenes del sitio web, con una miniatura y sus características asociadas.</p>
+              </li>
+              </ul>
+          <p>
+            Es una buena práctica acostumbrarse a utilizar el validador para acostumbrarse a crear código HTML de calidad y sin errores, ya que si tenemos documentos sin errores de validación, es más probable que se vean correctamente en cualquier tipo de dispositivo.
+          </p>
+          <blockquote>
+            <p>En el editor <strong>VSCode</strong> podemos encontrar el paquete w3c-validation, que nos permite analizar los documentos HTML directamente desde el editor.</p>
+            </blockquote>
+        </article>
+      </section>
+
+      <section class="main-section" id="Referencia">
+        <header>Referencia</header>
+        <article>
+          <ul>
+            <li>
+              Toda la documentación de esta página está tomada de
+              <a
+                href="https://lenguajehtml.com/html"
+                target="_blank"
+                >HTML</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <!-- js code -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- js code -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
